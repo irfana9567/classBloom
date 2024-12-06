@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "493477610040",
+    "project_id": "classbloom-cf6cd",
+    "storage_bucket": "classbloom-cf6cd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493477610040:android:058519917a5ffbef045ccd",
+        "android_client_info": {
+          "package_name": "com.example.classbloom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlR_XYsPmU0aFhKTJiiWtfUMRbONi0zfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
