@@ -40,7 +40,7 @@ class HomeController extends StateNotifier<bool> {
 
   updateUser(BuildContext context,UserModel userModel) async {
     final userId= currentUserId;
-    final res = await _homeRepository.updateSurveyor(uid: userId, userModel: userModel);
+    final res = await _homeRepository.updateUser(uid: userId, userModel: userModel);
     res.fold((l) => AppsHelper.showSnackBar(l.message,context), (r) {
       AppsHelper.showSnackBar('Updated successfully!',context);
       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const HomePage(selectedIndex: 3,),), (route) => false,);

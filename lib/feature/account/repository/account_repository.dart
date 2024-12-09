@@ -20,7 +20,7 @@ class HomeRepository{
 
   HomeRepository({required FirebaseFirestore fireStore}) : _fireStore = fireStore;
 
-  ///get surveyor data
+
   Future<UserModel> getUser(String uid)async{
     try{
       final querySnapshot=await _fireStore
@@ -38,8 +38,7 @@ class HomeRepository{
     }
   }
 
-  ///update surveyor data
-  FutureVoid updateSurveyor({required String uid, required UserModel userModel,}) async {
+  FutureVoid updateUser({required String uid, required UserModel userModel,}) async {
     try {
       return right(_fireStore.collection("users").doc(uid).update(userModel.toMap()));
     } catch (e) {
