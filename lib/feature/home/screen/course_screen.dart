@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../core/constants/color_const.dart';
-import '../../core/constants/image_const.dart';
-import '../../core/widgets/custom_layout.dart';
-import '../../core/widgets/custom_list_tile.dart';
-import '../../main.dart';
+import '../../../core/constants/color_const.dart';
+import '../../../core/constants/image_const.dart';
+import '../../../core/widgets/custom_layout.dart';
+import '../../../core/widgets/custom_list_tile.dart';
+import '../../../main.dart';
 import 'video_playerscreen.dart';
 
 class CourseScreen extends StatefulWidget {
