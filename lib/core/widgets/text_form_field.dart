@@ -75,10 +75,10 @@ class CustomTextInput extends StatelessWidget {
       child: TextFormField(
         textInputAction: textInputAction,
         readOnly: readOnly ?? false,
-        style: TextStyle(
-          fontSize: w * 0.04,
-          fontFamily: fount,
-        ),
+        // style: TextStyle(
+        //   fontSize: w * 0.04,
+        //   fontFamily: fount,
+        // ),
         obscureText: obscureText ?? false,
         onChanged: onChanged,
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -104,7 +104,9 @@ class CustomTextInput extends StatelessWidget {
               labelStyle: TextStyle(
                 fontFamily: fount,
                 color: labelColour ?? Palette.greyColor,
-                fontSize: w * 0.03,
+                fontSize: MediaQuery.of(context).size.width > 600
+                    ? 14 // Web or larger screen size
+                    : 16, // Mobile
               ),
               prefixIcon: prefixIcon != null
                   ? InkWell(
@@ -140,4 +142,9 @@ class CustomTextInput extends StatelessWidget {
       ),
     );
   }
+
+
+
+
+
 }

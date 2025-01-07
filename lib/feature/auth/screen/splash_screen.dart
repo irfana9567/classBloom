@@ -19,7 +19,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    Future.delayed(Duration(seconds: 5)).then((value) =>  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage(),)),);
+    // Future.delayed(Duration(seconds: 5)).then((value) =>  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage(),)),);
     Future.delayed(const Duration(seconds: 3)).then((value) =>
         ref.read(AuthControllerProvider.notifier).keepLogin(context));
     super.initState();
@@ -51,21 +51,3 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
 
 
-// Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Center(
-//             child: SizedBox(
-//               height:w*0.2,
-//               width:w*0.4,
-//               child:SvgPicture.asset(iconConst.logo,color: Colors.black,),
-//             ),
-//           ),
-//           Center(
-//             child: Text("Class Bloom",style: TextStyle(
-//               fontSize: w*0.1,
-//               color: Colors.green
-//             ),),
-//           )
-//         ],
-//       )
