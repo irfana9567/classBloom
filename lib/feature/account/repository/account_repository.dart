@@ -6,6 +6,7 @@ import 'package:fpdart/fpdart.dart';
 import '../../../core/providers/failure.dart';
 import '../../../core/providers/firebase_providers.dart';
 import '../../../core/providers/typedef.dart';
+import '../../../model/question_model.dart';
 import '../../../model/user_model.dart';
 
 
@@ -46,6 +47,25 @@ class HomeRepository{
     }
   }
 
+  addQns( {required QuestionModel questionModel}){
+    try{
+      DocumentReference reference=_fireStore.collection("questions").doc();
+      QuestionModel questionModelData=questionModel.copyWith(
+        id: reference.id,
+        reference: reference,
+      );
+      return Right(reference.set(questionModelData.toJson()));
+
+
+    }catch (e){
+      return Left(e.toString());
+    }
+  }
+
+  Stream<List<QuestionModel>> getQns(){
+    return _fireStore.collection('questions').where('delete',isEqualTo: false).orderBy('uploadDate',descending: true).snapshots().map((event) =>
+        event.docs.map((e) => QuestionModel.fromJson(e.data()),).toList(),);
+  }
 }
 
 
